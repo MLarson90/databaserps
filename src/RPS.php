@@ -8,9 +8,13 @@
           }
 
           function checkWinner($player1, $player2) {
+            var_dump("Player 1 = ");
+            var_dump($player1);
+            var_dump("Player 2 = ");
+            var_dump($player2);
             if ($player1 == $player2) {
               return "Tie";
-            }elseif (($player1=="rock") && ($player2 =="scissors") || ($player1 == "paper") && ($player2 == "rock") || ($player1 == "scissors") && ($player2 == "paper")) {
+            }elseif ((($player1=="rock") && ($player2 =="scissors")) || (($player1 == "paper") && ($player2 == "rock")) || (($player1 == "scissors") && ($player2 == "paper"))) {
               return "Player 1";
             }else{
               return "Player 2";

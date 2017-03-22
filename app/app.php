@@ -9,8 +9,7 @@
   if (empty($_SESSION['list_of_pTwo'])) {
     $_SESSION['list_of_pTwo'] = array();
   }
-  var_dump($_SESSION['list_of_input']);
-  var_dump($_SESSION['list_of_pTwo']);
+  
   $app = new Silex\Application();
 
   $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
@@ -50,8 +49,13 @@
   });
   $app->post('/delete', function() use ($app){
     $winner = new RPS('input');
-    RPS::deleteAll();
-    return $app['twig']->render('results.html.twig', array('zach' => $winner, 'steve' => $_SESSION['list_of_input'], 'max' => $_SESSION['list_of_pTwo']));
+    $one = $_SESSION['list_of_input'];
+    $two = $_SESSION['list_of_pTwo'];
+    return $app['twig']->render('results.html.twig', array('zach' => $winner, 'steve' => $one, 'max' => $two));
+  });
+    $app->post('/home', function() use ($app){
+      RPS::deleteAll();
+      return $app['twig']->render('index.html.twig');
   });
   return $app;
 ?>
