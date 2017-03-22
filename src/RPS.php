@@ -3,8 +3,8 @@
     {
           public $input;
 
-          function __construct($something){
-            $this->input = $something;
+          function __construct($input){
+            $this->input = $input;
           }
 
           function checkWinner($player1, $player2) {

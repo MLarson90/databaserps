@@ -49,9 +49,12 @@
       return $app['twig']->render('results.html.twig');
   });
   $app->post('/delete', function() use ($app){
-    $winner = new RPS;
+    $winner = new RPS('input');
+    $one =implode("",$_SESSION['list_of_input']);
+    $two =implode("",$_SESSION['list_of_pTwo']);
+    $winner->checkWinner($one,$two);
     RPS::deleteAll();
-    return $app['twig']->render('results.html.twig', array('zach' => $winner, 'steve' => $_SESSION['list_of_input'], 'max' => $_SESSION['list_of_pTwo']));
+    return $app['twig']->render('results.html.twig', array('zach' => $winner));
   });
   return $app;
 ?>
