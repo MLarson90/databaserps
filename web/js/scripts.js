@@ -1,6 +1,10 @@
 $(document).ready(function(){
   $("#start").click(function(event){
     event.preventDefault();
-
+    $("#playerone").show();
+  });
+  $(".gotoTwo").click(function(){
+    $("#home").hide();
+    $("#playerTwo").show();
   });
 });
