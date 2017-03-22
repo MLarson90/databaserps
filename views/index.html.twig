@@ -1,0 +1,22 @@
+{% include 'topbase.html.twig' %}
+<h1> Get Ready to Play Rock Paper Scissors!!!! <h1>
+  <h3> Player 2 turn around now!</h3>
+  <form id="start">
+    <button type="button" name="button">Start Battle!</button>
+  </form>
+  <form action="rock_input" method="post">
+    <button name="rocks" value="rock">
+      <img class="choice" src="img/rock.png">
+    </button>
+  </form>
+  <form action="paper_input" method="post">
+    <button type="submit" name="papers" value="paper">
+      <img class="choice"  src="img/paper.jpeg">
+    </button>
+  </form>
+  <form action="scissor_input" method="post">
+    <button name="scissorss" value="scissors">
+      <img class="choice" src="img/scissors.jpeg" >
+    </button>
+  </form>
+{% include 'bottombase.html.twig' %}
