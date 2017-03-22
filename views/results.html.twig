@@ -1,7 +1,7 @@
 {% include 'topbase.html.twig' %}
 <h1> And the winner is... <h1>
   <ul>
-  <li>{{ zach }}</li>
+  <li>{{ zach.checkWinner(steve['input'], max['input']) }}</li>
 </ul>
   <form action="/delete" method="post">
     <button type="submit">See Winner</button>
