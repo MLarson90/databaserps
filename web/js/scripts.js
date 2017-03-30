@@ -3,8 +3,8 @@ $(document).ready(function(){
     event.preventDefault();
     $("#playerone").show();
   });
-  $(".gotoTwo").click(function(){
-    $("#home").hide();
+  $("#startTwo").click(function(event){
+    event.preventDefault();
     $("#playerTwo").show();
   });
 });
